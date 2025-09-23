@@ -4,11 +4,11 @@
 
 # API Reference
 
-- [Front](front)
-- [FrontEllipse](frontellipse)
-- [FrontSkeleton](frontskeleton)
-- [FrontTracker](fronttracker)
-- [Geometry](geometry)
+- [Front](Front)
+- [FrontEllipse](FrontEllipse)
+- [FrontSkeleton](FrontSkeleton)
+- [FrontTracker](FrontTracker)
+- [Geometry](Geometry)
 
 # Demos
 
