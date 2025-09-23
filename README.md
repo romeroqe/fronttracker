@@ -2,12 +2,13 @@
 <a href="https://github.com/romeroqe/fronttracker"><img src="https://shields.io/github/v/release/romeroqe/fronttracker" alt="Release"></a>
 <a href="https://pypi.org/project/fronttracker/"><img src="https://img.shields.io/pypi/v/fronttracker" alt="PyPI Version"></a>
 <a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://shields.io/github/license/romeroqe/fronttracker" alt="License"></a>
+<a href="https://zenodo.org/badge/latestdoi/1062783898"><img src="https://zenodo.org/badge/1062783898.svg" alt="DOI"></a>
 
 FrontTracker is a Python library for the segmentation, and analysis of oceanic fronts from satellite and reanalysis datasets. It integrates clustering, skeletonization, statistical and geometric analysis to provide robust descriptors of frontal structures, including position, intensity, orientation, eccentricity, and temporal evolution.
 
 This methodology is suitable for both global and regional studies, enabling the monitoring of frontal dynamics, lifecycle events (formation, enhancement, splitting, merging, attenuation, and decay), and links with biogeochemical processes.
 
-## ✨ Features
+## Features
 - Segmentation and skeletonization of frontal lines.  
 - Extraction of geometric descriptors (length, width, eccentricity).  
 - Statistical metrics from pixel distribution (kurtosis, skewness).  
@@ -31,7 +32,7 @@ Full documentation and Jupyter demos are available in the [FrontTracker document
 > [!IMPORTANT]
 > _A scientific publication related to FrontTracker is being reviewed by a journal, for now, you can use the Zenodo reference:_
 > 
-> ...
+> Emmanuel Romero. (2025). romeroqe/fronttracker: FrontTracker (v1.0). Zenodo. https://doi.org/10.5281/zenodo.17187343
 
 ## License
   
