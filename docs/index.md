@@ -4,11 +4,11 @@
 
 # API Reference
 
-- [Front](Front)
-- [FrontEllipse](FrontEllipse)
-- [FrontSkeleton](FrontSkeleton)
-- [FrontTracker](FrontTracker)
-- [Geometry](Geometry)
+- [Front](https://romeroqe.github.io/fronttracker/Front)
+- [FrontEllipse](https://romeroqe.github.io/fronttracker/FrontEllipse)
+- [FrontSkeleton](https://romeroqe.github.io/fronttracker/FrontSkeleton)
+- [FrontTracker](https://romeroqe.github.io/fronttracker/FrontTracker)
+- [Geometry](https://romeroqe.github.io/fronttracker/Geometry)
 
 # Demos
 
