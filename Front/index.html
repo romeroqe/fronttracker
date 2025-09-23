@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Front - FrontTracker</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Front";
+        var mkdocs_page_input_path = "Front.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> FrontTracker
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">API</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Front</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#fronttracker.core.Front--parameters">Parameters</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fronttracker.core.Front.epsx">epsx</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fronttracker.core.Front.epsy">epsy</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fronttracker.core.Front.gm">gm</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fronttracker.core.Front.label">label</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fronttracker.core.Front.latitude">latitude</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fronttracker.core.Front.longitude">longitude</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fronttracker.core.Front.nstd">nstd</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fronttracker.core.Front.pixels">pixels</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fronttracker.core.Front.__init__">__init__</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fronttracker.core.Front._area">_area</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fronttracker.core.Front._skeleton">_skeleton</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#fronttracker.core.Front._skeleton--attributes">Attributes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fronttracker.core.Front.contouring">contouring</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#fronttracker.core.Front.contouring--parameters">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fronttracker.core.Front.front_ellipse">front_ellipse</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fronttracker.core.Front.get_gm_description">get_gm_description</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#fronttracker.core.Front.get_gm_description--parameters">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fronttracker.core.Front.get_gm_description--returns">Returns</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fronttracker.core.Front.get_greatest_distance">get_greatest_distance</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#fronttracker.core.Front.get_greatest_distance--returns">Returns</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fronttracker.core.Front.metrics">metrics</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fronttracker.core.Front.rotate_front">rotate_front</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#fronttracker.core.Front.rotate_front--parameters">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../FrontEllipse/">FrontEllipse</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../FrontSkeleton/">FrontSkeleton</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../FrontTracker/">FrontTracker</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Geometry/">Geometry</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Demos</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../notebooks/getting_started/">Getting Started with FrontTracker</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../notebooks/visualizing_labeled_fronts/">Visualizing Labeled Fronts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../notebooks/front_orientation_analysis/">Front Orientation Analysis</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../notebooks/front_lifecycle_analysis/">Front Lifecycle Analysis</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">FrontTracker</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">API</li>
+      <li class="breadcrumb-item active">Front</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div class="doc doc-object doc-class">
+
+
+
+<h2 id="fronttracker.core.Front" class="doc doc-heading">
+            <span class="doc doc-object-name doc-class-name">fronttracker.core.Front</span>
+
+
+</h2>
+
+
+    <div class="doc doc-contents first">
+
+
+        <p>Representation of an individual front.</p>
+<h4 id="fronttracker.core.Front--parameters">Parameters</h4>
+<p>label : int
+    Front identifier.
+pixels : int
+    Number of pixels per front.
+longitude : array-like
+    Longitudes of the front pixels.
+latitude : array-like
+    Latitudes of the front pixels.
+gm : array-like
+    Gradient magnitude values.
+epsx : float
+    Maximum distance between two samples in longitude.
+epsy : float
+    Maximum distance between two samples in latitude.
+nstd : float
+    Number of standard deviations for ellipse estimation.</p>
+
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="fronttracker.core.Front.epsx" class="doc doc-heading">
+            <span class="doc doc-object-name doc-attribute-name">epsx</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">epsx</span> <span class="o">=</span> <span class="n">epsx</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="fronttracker.core.Front.epsy" class="doc doc-heading">
+            <span class="doc doc-object-name doc-attribute-name">epsy</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">epsy</span> <span class="o">=</span> <span class="n">epsy</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="fronttracker.core.Front.gm" class="doc doc-heading">
+            <span class="doc doc-object-name doc-attribute-name">gm</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">gm</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">gm</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="fronttracker.core.Front.label" class="doc doc-heading">
+            <span class="doc doc-object-name doc-attribute-name">label</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">label</span> <span class="o">=</span> <span class="n">label</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="fronttracker.core.Front.latitude" class="doc doc-heading">
+            <span class="doc doc-object-name doc-attribute-name">latitude</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">latitude</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">latitude</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="fronttracker.core.Front.longitude" class="doc doc-heading">
+            <span class="doc doc-object-name doc-attribute-name">longitude</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">longitude</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">longitude</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="fronttracker.core.Front.nstd" class="doc doc-heading">
+            <span class="doc doc-object-name doc-attribute-name">nstd</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">nstd</span> <span class="o">=</span> <span class="n">nstd</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="fronttracker.core.Front.pixels" class="doc doc-heading">
+            <span class="doc doc-object-name doc-attribute-name">pixels</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">pixels</span> <span class="o">=</span> <span class="n">pixels</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+    </div>
+
+</div>
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="fronttracker.core.Front.__init__" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">__init__</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">__init__</span><span class="p">(</span>
+    <span class="n">label</span><span class="p">,</span> <span class="n">pixels</span><span class="p">,</span> <span class="n">longitude</span><span class="p">,</span> <span class="n">latitude</span><span class="p">,</span> <span class="n">gm</span><span class="p">,</span> <span class="n">epsx</span><span class="p">,</span> <span class="n">epsy</span><span class="p">,</span> <span class="n">nstd</span>
+<span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="fronttracker.core.Front._area" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">_area</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">_area</span><span class="p">()</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Compute the approximate area covered by the front in km².</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="fronttracker.core.Front._skeleton" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">_skeleton</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">_skeleton</span><span class="p">()</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Build a skeletonized representation of the front from its pixel coordinates.</p>
+<h5 id="fronttracker.core.Front._skeleton--attributes">Attributes</h5>
+<p>skeleton : FrontSkeleton
+    Object containing the skeleton grid and its geodesic length.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="fronttracker.core.Front.contouring" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">contouring</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">contouring</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Compute alpha-shape contour of the front.</p>
+<h5 id="fronttracker.core.Front.contouring--parameters">Parameters</h5>
+<p>alpha : float, optional
+    Alpha value for shape generation. If None, defaults to <code>1/epsx</code>.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="fronttracker.core.Front.front_ellipse" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">front_ellipse</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">front_ellipse</span><span class="p">()</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Compute the ellipse parameters describing the front.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="fronttracker.core.Front.get_gm_description" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">get_gm_description</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get_gm_description</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Get descriptive statistics of the gradient magnitude.</p>
+<h5 id="fronttracker.core.Front.get_gm_description--parameters">Parameters</h5>
+<p>verbose : bool, default=True
+    If True, print the description.</p>
+<h5 id="fronttracker.core.Front.get_gm_description--returns">Returns</h5>
+<p>dict
+    Dictionary with statistics (mean, std, min, percentiles, max).</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="fronttracker.core.Front.get_greatest_distance" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">get_greatest_distance</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get_greatest_distance</span><span class="p">()</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Compute the greatest geodesic distance between any two pixels using the convex hull of the front.</p>
+<h5 id="fronttracker.core.Front.get_greatest_distance--returns">Returns</h5>
+<p>tuple
+    (distance in km, coord1, coord2)</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="fronttracker.core.Front.metrics" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">metrics</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">metrics</span><span class="p">()</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Compute area, ellipse and skeleton metrics for the front.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="fronttracker.core.Front.rotate_front" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">rotate_front</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">rotate_front</span><span class="p">(</span><span class="n">angle</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Rotate the front around its ellipse center.</p>
+<h5 id="fronttracker.core.Front.rotate_front--parameters">Parameters</h5>
+<p>angle : float, optional
+    Rotation angle in degrees. Defaults to 0.</p>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../FrontEllipse/" class="btn btn-neutral float-right" title="FrontEllipse">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../FrontEllipse/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

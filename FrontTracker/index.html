@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>FrontTracker - FrontTracker</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "FrontTracker";
+        var mkdocs_page_input_path = "FrontTracker.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> FrontTracker
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">API</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Front/">Front</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../FrontEllipse/">FrontEllipse</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../FrontSkeleton/">FrontSkeleton</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">FrontTracker</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#fronttracker.core.FrontTracker--attributes">Attributes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fronttracker.core.FrontTracker.fronts">fronts</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fronttracker.core.FrontTracker.__init__">__init__</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fronttracker.core.FrontTracker.get_clusters">get_clusters</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#fronttracker.core.FrontTracker.get_clusters--parameters">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fronttracker.core.FrontTracker.get_clusters--returns">Returns</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fronttracker.core.FrontTracker.get_frontal_path">get_frontal_path</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#fronttracker.core.FrontTracker.get_frontal_path--parameters">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fronttracker.core.FrontTracker.get_frontal_path--returns">Returns</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fronttracker.core.FrontTracker.get_frontal_pixels">get_frontal_pixels</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#fronttracker.core.FrontTracker.get_frontal_pixels--parameters">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fronttracker.core.FrontTracker.get_frontal_pixels--returns">Returns</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fronttracker.core.FrontTracker.identify_fronts">identify_fronts</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#fronttracker.core.FrontTracker.identify_fronts--parameters">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fronttracker.core.FrontTracker.track">track</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Geometry/">Geometry</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Demos</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../notebooks/getting_started/">Getting Started with FrontTracker</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../notebooks/visualizing_labeled_fronts/">Visualizing Labeled Fronts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../notebooks/front_orientation_analysis/">Front Orientation Analysis</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../notebooks/front_lifecycle_analysis/">Front Lifecycle Analysis</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">FrontTracker</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">API</li>
+      <li class="breadcrumb-item active">FrontTracker</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div class="doc doc-object doc-class">
+
+
+
+<h2 id="fronttracker.core.FrontTracker" class="doc doc-heading">
+            <span class="doc doc-object-name doc-class-name">fronttracker.core.FrontTracker</span>
+
+
+</h2>
+
+
+    <div class="doc doc-contents first">
+
+
+        <p>Main class for identifying and tracking oceanic fronts over time.</p>
+<h4 id="fronttracker.core.FrontTracker--attributes">Attributes</h4>
+<p>fronts : dict
+    Dictionary of identified <code>Front</code> objects, indexed by label.
+data : pandas.DataFrame
+    Tabular data of all detected front pixels with columns:
+    <code>time</code>, <code>longitude</code>, <code>latitude</code>, <code>gm</code>, <code>labels</code>.
+data_labels : pandas.DataFrame
+    DataFrame mapping each front label to its next label in the tracking path.
+epsx : float
+    Grid resolution in longitude (degrees).
+epsy : float
+    Grid resolution in latitude (degrees).
+eps : float
+    Neighborhood distance used in DBSCAN clustering.
+nstd : float
+    Number of standard deviations for ellipse estimation.</p>
+
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="fronttracker.core.FrontTracker.fronts" class="doc doc-heading">
+            <span class="doc doc-object-name doc-attribute-name">fronts</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">fronts</span> <span class="o">=</span> <span class="p">{}</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+    </div>
+
+</div>
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="fronttracker.core.FrontTracker.__init__" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">__init__</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">__init__</span><span class="p">()</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="fronttracker.core.FrontTracker.get_clusters" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">get_clusters</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get_clusters</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Cluster frontal pixels using DBSCAN.</p>
+<h5 id="fronttracker.core.FrontTracker.get_clusters--parameters">Parameters</h5>
+<p>X : ndarray of shape (n, 2)
+    Array of (longitude, latitude) coordinates of frontal pixels.</p>
+<h5 id="fronttracker.core.FrontTracker.get_clusters--returns">Returns</h5>
+<p>labels : ndarray of shape (n,)
+    Cluster labels for each pixel.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="fronttracker.core.FrontTracker.get_frontal_path" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">get_frontal_path</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get_frontal_path</span><span class="p">(</span><span class="n">start_label</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Compute the sequence of connected fronts starting from a given label.</p>
+<h5 id="fronttracker.core.FrontTracker.get_frontal_path--parameters">Parameters</h5>
+<p>start_label : int
+    Label of the starting front.</p>
+<h5 id="fronttracker.core.FrontTracker.get_frontal_path--returns">Returns</h5>
+<p>path : list of int
+    Sequence of connected front labels.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="fronttracker.core.FrontTracker.get_frontal_pixels" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">get_frontal_pixels</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get_frontal_pixels</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">grid_gm</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Extract pixels corresponding to frontal zone.</p>
+<h5 id="fronttracker.core.FrontTracker.get_frontal_pixels--parameters">Parameters</h5>
+<p>x : array-like
+    Longitudes.
+y : array-like
+    Latitudes.
+grid : 2D ndarray
+    Binary grid (1 = front, 0 = background).
+grid_gm : 2D ndarray
+    Gradient magnitude values corresponding to the grid.</p>
+<h5 id="fronttracker.core.FrontTracker.get_frontal_pixels--returns">Returns</h5>
+<p>xy : ndarray of shape (n, 2)
+    Array of (longitude, latitude) coordinates of frontal pixels.
+gm : ndarray
+    Gradient magnitude values at the extracted pixels.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="fronttracker.core.FrontTracker.identify_fronts" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">identify_fronts</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">identify_fronts</span><span class="p">(</span>
+    <span class="n">time</span><span class="p">,</span>
+    <span class="n">longitudes</span><span class="p">,</span>
+    <span class="n">latitudes</span><span class="p">,</span>
+    <span class="n">grid</span><span class="p">,</span>
+    <span class="n">treshold</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+    <span class="n">eps</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">nstd</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Identify fronts from gradient magnitude grids using DBSCAN clustering.</p>
+<h5 id="fronttracker.core.FrontTracker.identify_fronts--parameters">Parameters</h5>
+<p>time : array-like
+    Sequence of timestamps corresponding to the grid.
+longitudes : array-like
+    Array of geodesic longitudes.
+latitudes : array-like
+    Array of geodesic latitudes.
+grid : ndarray
+    3D array of gradient magnitude values (time, lat, lon).
+treshold : float, default=0.05
+    Threshold to binarize the gradient magnitude field.
+eps : float, optional
+    Maximum distance between two samples for DBSCAN. If None,
+    it is estimated automatically from grid resolution.
+nstd : float, default=2
+    Number of standard deviations for ellipse estimation.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="fronttracker.core.FrontTracker.track" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">track</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">track</span><span class="p">()</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Track fronts over time based on pixel overlap.</p>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../FrontSkeleton/" class="btn btn-neutral float-left" title="FrontSkeleton"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Geometry/" class="btn btn-neutral float-right" title="Geometry">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../FrontSkeleton/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Geometry/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
