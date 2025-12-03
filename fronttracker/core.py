@@ -319,10 +319,10 @@ class FrontSkeleton():
         """Compute the geodesic length of the skeleton."""
         length = 0
         for x in range(self.longitude.shape[0]-1):
-            for y in range(self.latitude.shape[0]-1):
+            for y in range(self.latitude.shape[0]):
                 if self.skeleton[y,x] == 1:
                     coord1 = (self.latitude[y], self.longitude[x])
-                    coord2 = (self.latitude[y+1], self.longitude[x+1])
+                    coord2 = (self.latitude[y], self.longitude[x+1])
                     length += geopy.distance.geodesic(coord1, coord2).kilometers
         self.length = length
 
