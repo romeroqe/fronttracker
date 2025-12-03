@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="fronttracker",
-    version="1.0.0",
+    version="1.1.0",
     author="Emmanuel Romero",
     author_email="romeroqe@gmail.com",
     description="Library for detection and monitoring of ocean fronts",
