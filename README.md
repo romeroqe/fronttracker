@@ -1,7 +1,7 @@
 # FrontTracker 
 <a href="https://github.com/romeroqe/fronttracker"><img src="https://shields.io/github/v/release/romeroqe/fronttracker" alt="Release"></a>
 <a href="https://pypi.org/project/fronttracker/"><img src="https://img.shields.io/pypi/v/fronttracker" alt="PyPI Version"></a>
-<a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://shields.io/github/license/romeroqe/fronttracker" alt="License"></a>
+<a href="https://github.com/romeroqe/fronttracker/blob/main/LICENSE"><img src="https://shields.io/github/license/romeroqe/fronttracker" alt="License"></a>
 <a href="https://doi.org/10.5281/zenodo.17187343"><img src="https://zenodo.org/badge/1062783898.svg" alt="DOI"></a>
 
 FrontTracker is a Python library for the segmentation, and analysis of oceanic fronts from satellite and reanalysis datasets. It integrates clustering, skeletonization, statistical and geometric analysis to provide robust descriptors of frontal structures, including position, intensity, orientation, eccentricity, and temporal evolution.
@@ -36,4 +36,4 @@ Full documentation and Jupyter demos are available in the [FrontTracker document
 
 ## License
   
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+<a rel="license" href="https://www.gnu.org/licenses/gpl-3.0.html">  <img alt="GNU General Public License v3.0" style="border-width:0" src="https://www.gnu.org/graphics/gplv3-88x31.png" /></a><br />This work is licensed under the <a rel="license" href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License v3.0</a>.
