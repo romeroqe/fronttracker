@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import geopy.distance
 import alphashape
+import warnings
 
 from types import SimpleNamespace
 from scipy.stats import gaussian_kde, kurtosis, skew as skewness
@@ -88,22 +89,25 @@ class Front():
 
     def front_ellipse(self):
         """Compute the ellipse parameters describing the front."""
-        x_mean = np.mean(self.longitude)
-        y_mean = np.mean(self.latitude)
-        cov = np.cov(self.longitude, self.latitude)
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
 
-        centre, size, angle, eccentricity, e = ellipse(cov, (x_mean, y_mean), nstd=self.nstd)
-        self.ellipse = FrontEllipse(self.longitude, self.latitude, centre, size, angle, eccentricity, e)
+            x_mean = np.mean(self.longitude)
+            y_mean = np.mean(self.latitude)
+            cov = np.cov(self.longitude, self.latitude)
 
-        points1 = [(self.ellipse.centre[0]+self.ellipse.size[0]/2*np.cos(np.radians(self.ellipse.angle)), self.ellipse.centre[1]+self.ellipse.size[0]/2*np.sin(np.radians(self.ellipse.angle))), (self.ellipse.centre[0]+self.ellipse.size[0]/2*np.cos(np.radians(self.ellipse.angle + 180)), self.ellipse.centre[1]+self.ellipse.size[0]/2*np.sin(np.radians(self.ellipse.angle + 180)))]
-        points2 = [(self.ellipse.centre[0]+self.ellipse.size[1]/2*np.cos(np.radians(self.ellipse.angle+90)), self.ellipse.centre[1]+self.ellipse.size[1]/2*np.sin(np.radians(self.ellipse.angle+90))), (self.ellipse.centre[0]+self.ellipse.size[1]/2*np.cos(np.radians(self.ellipse.angle + 270)), self.ellipse.centre[1]+self.ellipse.size[1]/2*np.sin(np.radians(self.ellipse.angle + 270)))]
+            centre, size, angle, eccentricity, e = ellipse(cov, (x_mean, y_mean), nstd=self.nstd)
+            self.ellipse = FrontEllipse(self.longitude, self.latitude, centre, size, angle, eccentricity, e)
 
-        try:
-            length = geopy.distance.geodesic(points1[0][::-1], points1[1][::-1]).km
-            width = geopy.distance.geodesic(points2[0][::-1], points2[1][::-1]).km
-        except:
-            length = width = -1
-        self.length, self.width = length, width
+            points1 = [(self.ellipse.centre[0]+self.ellipse.size[0]/2*np.cos(np.radians(self.ellipse.angle)), self.ellipse.centre[1]+self.ellipse.size[0]/2*np.sin(np.radians(self.ellipse.angle))), (self.ellipse.centre[0]+self.ellipse.size[0]/2*np.cos(np.radians(self.ellipse.angle + 180)), self.ellipse.centre[1]+self.ellipse.size[0]/2*np.sin(np.radians(self.ellipse.angle + 180)))]
+            points2 = [(self.ellipse.centre[0]+self.ellipse.size[1]/2*np.cos(np.radians(self.ellipse.angle+90)), self.ellipse.centre[1]+self.ellipse.size[1]/2*np.sin(np.radians(self.ellipse.angle+90))), (self.ellipse.centre[0]+self.ellipse.size[1]/2*np.cos(np.radians(self.ellipse.angle + 270)), self.ellipse.centre[1]+self.ellipse.size[1]/2*np.sin(np.radians(self.ellipse.angle + 270)))]
+
+            try:
+                length = geopy.distance.geodesic(points1[0][::-1], points1[1][::-1]).km
+                width = geopy.distance.geodesic(points2[0][::-1], points2[1][::-1]).km
+            except:
+                length = width = -1
+            self.length, self.width = length, width
 
     def _skeleton(self):
         """
@@ -268,24 +272,27 @@ class FrontEllipse():
             - kurt : float
             - skew : float
         """
-        data_values = np.linspace(min(data), max(data), 1000)
-        if np.unique(data).size < 2:
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore") 
+
+            data_values = np.linspace(min(data), max(data), 1000)
+            if np.unique(data).size < 2:
+                return SimpleNamespace(
+                    pdf = None,
+                    pdf_values = None,
+                    data_values = data_values,
+                    kurt = kurtosis(data, fisher=True),
+                    skew = skewness(data)
+                )
+
+            kde = gaussian_kde(data)
             return SimpleNamespace(
-                pdf = None,
-                pdf_values = None,
+                pdf = kde,
+                pdf_values = kde(data_values),
                 data_values = data_values,
                 kurt = kurtosis(data, fisher=True),
                 skew = skewness(data)
             )
-
-        kde = gaussian_kde(data)
-        return SimpleNamespace(
-            pdf = kde,
-            pdf_values = kde(data_values),
-            data_values = data_values,
-            kurt = kurtosis(data, fisher=True),
-            skew = skewness(data)
-        )
 
 class FrontSkeleton():
     """
@@ -308,12 +315,15 @@ class FrontSkeleton():
         Geodesic length of the skeleton in kilometers.
     """
     def __init__(self, latitude, longitude, grid):
-        self.latitude = latitude
-        self.longitude = longitude
-        self.grid = grid
-        self.skeleton = skeletonize(grid).astype(float)
-        self.skeleton[self.skeleton == 0] = np.nan
-        self._length()
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore") 
+
+            self.latitude = latitude
+            self.longitude = longitude
+            self.grid = grid
+            self.skeleton = skeletonize(grid).astype(float)
+            self.skeleton[self.skeleton == 0] = np.nan
+            self._length()
 
     def _length(self):
         """Compute the geodesic length of the skeleton."""

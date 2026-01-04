@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="fronttracker",
-    version="1.1.0",
+    version="1.1.1",
     author="Emmanuel Romero",
     author_email="romeroqe@gmail.com",
     description="Library for detection and monitoring of ocean fronts",
@@ -21,10 +21,10 @@ setup(
         "alphashape",
         "matplotlib"
     ],
-    license="CC-BY-4.0",
+    license="GPL-3.0",
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: Other/Proprietary License",
+        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
         "Operating System :: OS Independent",
     ],
     python_requires=">=3.9",
